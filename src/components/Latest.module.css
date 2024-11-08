@@ -1,0 +1,11 @@
+.latestBox {
+  display: flex;
+  align-items: center;
+  margin: 1rem 4rem;
+  padding: 2rem;
+}
+
+.RecipeList {
+  flex-direction: row;
+  flex-wrap: wrap;
+}

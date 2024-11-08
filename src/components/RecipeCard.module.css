@@ -1,0 +1,4 @@
+.recipeCard {
+  display: flex;
+  flex-direction: column;
+}

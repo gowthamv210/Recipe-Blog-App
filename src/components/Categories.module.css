@@ -1,0 +1,63 @@
+.categoryBox {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem 1rem;
+}
+
+.carouselContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
+  background-color: #f8f9fa;
+}
+
+.carouselItem {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: center;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+  padding: 20px;
+}
+
+.categoryName {
+  font-size: 2rem;
+  padding: 0rem 3rem;
+  font-weight: bold;
+}
+
+.categoryImage {
+  width: 50%; /* Adjust the size as needed */
+  height: auto;
+  object-fit: cover;
+  padding: 0rem 3rem;
+  border-radius: 10px;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.navButtonLeft {
+  left: 10px;
+}
+
+.navButtonRight {
+  right: 10px;
+}
+
+.navButton:hover {
+  background: #ddd;
+}
