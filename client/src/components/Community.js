@@ -2,12 +2,13 @@ import styles from "./Community.module.css";
 import RecipeForm from "./RecipeForm";
 
 export default function Community() {
+  const apiUrl = process.env.REACT_APP_API_URL;
   return (
     <div id="community" className={styles.communityBox}>
       <h2>Community</h2>
       <div className={styles.communityContainer}>
         <span>
-          <img src="/images/hero-image.png" alt="hero-image" />
+          <img src={`${apiUrl}/images/hero-image.png`} alt="hero-image" />
           <div className={styles.card}>
             <div className={styles.quote}>
               <svg

@@ -8,18 +8,19 @@ import { FaYoutube } from "react-icons/fa6";
 import { FaThreads } from "react-icons/fa6";
 
 export default function AboutUs() {
+  const apiUrl = process.env.REACT_APP_API_URL;
   return (
     <div id="aboutus" className="aboutus-box">
       <div className="aboutus-container">
         <div className="logo-aboutUs">
           <img
             className="app-logo-aboutUs"
-            src="/images/app-icon-black.png"
+            src={`${apiUrl}/images/app-icon-black.png`}
             alt="app-logo"
           />
           <img
             className="app-logo-text"
-            src="/images/app-logo-text-white.png"
+            src={`${apiUrl}/images/app-logo-text-white.png`}
             alt="app-logo-text"
           />
         </div>

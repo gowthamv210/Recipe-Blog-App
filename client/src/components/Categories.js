@@ -7,6 +7,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Categories() {
+  const apiUrl = process.env.REACT_APP_API_URL;
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -31,7 +32,7 @@ export default function Categories() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get("/api/categories");
+        const response = await axios.get(`${apiUrl}/api/categories`);
         setCategories(response.data);
       } catch (err) {
         setError(err.message);
@@ -68,7 +69,7 @@ export default function Categories() {
       >
         <h2 className={styles.categoryName}>{categories[currentIndex].name}</h2>
         <img
-          src={`/images/categories/${categories[currentIndex].image}`}
+          src={`${apiUrl}/images/categories/${categories[currentIndex].image}`}
           alt={categories[currentIndex].name}
           className={styles.categoryImage}
         />

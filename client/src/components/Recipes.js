@@ -10,11 +10,12 @@ export default function Recipes() {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     async function fetchRecipes() {
       try {
-        const response = await axios.get(`/api/recipes/${category}`);
+        const response = await axios.get(`${apiUrl}/api/recipes/${category}`);
         setRecipes(response.data);
       } catch (err) {
         setError(err.message);

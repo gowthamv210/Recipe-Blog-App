@@ -9,11 +9,12 @@ export default function DisplayRecipe() {
   const [recipeData, setRecipeData] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     async function fetchRecipes() {
       try {
-        const response = await axios.get(`/api/recipe/${name}`);
+        const response = await axios.get(`${apiUrl}/api/recipe/${name}`);
         setRecipeData(response.data[0]);
         console.log(response.data[0]);
       } catch (err) {
@@ -35,7 +36,7 @@ export default function DisplayRecipe() {
       <div className={styles.recipeContainer}>
         <div className={styles.imageColumn}>
           <img
-            src={`/images/recipes/${recipeData.image}`}
+            src={`${apiUrl}/images/recipes/${recipeData.image}`}
             alt={recipeData.name}
             className={styles.recipeImage}
           />

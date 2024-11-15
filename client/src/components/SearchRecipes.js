@@ -10,11 +10,12 @@ export default function SearchRecipes() {
   const [searchedRecipes, setSearchedRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     async function fetchRecipes() {
       try {
-        const response = await axios.get(`/api/search/${input}`);
+        const response = await axios.get(`${apiUrl}/api/search/${input}`);
 
         setSearchedRecipes(response.data);
       } catch (err) {

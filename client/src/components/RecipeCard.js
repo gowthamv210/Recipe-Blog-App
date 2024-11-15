@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function RecipeCard({ recipe }) {
   const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   function handleOnClick(name) {
     navigate(`/recipe/${name}`);
@@ -14,7 +15,7 @@ export default function RecipeCard({ recipe }) {
       className={styles.recipeCard}
       onClick={() => handleOnClick(recipe.name)}
     >
-      <img src={`/images/recipes/${recipe.image}`} alt={recipe.name} />
+      <img src={`${apiUrl}/images/recipes/${recipe.image}`} alt={recipe.name} />
       <p>{recipe.name}</p>
     </div>
   );

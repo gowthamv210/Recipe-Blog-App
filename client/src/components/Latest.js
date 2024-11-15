@@ -8,6 +8,7 @@ export default function Latest() {
   const [latestRecipes, setLatestRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   /* const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -28,7 +29,7 @@ export default function Latest() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get("/api/latest");
+        const response = await axios.get(`${apiUrl}/api/latest`);
         setLatestRecipes(response.data);
         console.log(response.data);
       } catch (err) {

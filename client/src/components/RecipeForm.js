@@ -9,6 +9,7 @@ export default function RecipeForm() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const apiUrl = process.env.REACT_APP_API_URL;
   const [imageFile, setImageFile] = useState(null);
 
   const onSubmit = async (data) => {
@@ -27,7 +28,7 @@ export default function RecipeForm() {
     }
 
     try {
-      await axios.post("/api/recipes/add", formData, {
+      await axios.post(`${apiUrl}/api/recipes/add`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       alert("Recipe added successfully!");

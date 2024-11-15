@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   function handleClick(name) {
     navigate("/");
@@ -67,12 +68,12 @@ export default function Navbar() {
         >
           <img
             className={styles.appLogo}
-            src="/images/app-icon.png"
+            src={`${apiUrl}/images/app-icon.png`}
             alt="app-logo"
           />
           <img
             className={styles.appLogoText}
-            src="/images/app-logo-text.png"
+            src={`${apiUrl}/images/app-logo-text.png`}
             alt="app-logo-text"
           />
         </li>
