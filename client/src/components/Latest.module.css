@@ -1,11 +1,49 @@
 .latestBox {
   display: flex;
   align-items: center;
-  margin: 1rem 4rem;
+  margin: 1rem 3rem;
   padding: 2rem;
+  gap: 5px;
 }
 
-.RecipeList {
-  flex-direction: row;
-  flex-wrap: wrap;
+.carouselContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.recipeWrapper {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.arrowButton {
+  position: absolute;
+  top: 50%;
+  z-index: 9;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.arrowButton.left {
+  left: -15px; /* Adjust to fit layout */
+}
+
+.arrowButton.right {
+  right: -15px; /* Adjust to fit layout */
 }

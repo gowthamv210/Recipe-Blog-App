@@ -9,10 +9,26 @@ export default function Latest() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
+  /* const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Calculate the next index with wrapping logic
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? latestRecipes.length - 1 : prevIndex - 1
+    );
+  };
+
+  // Calculate the next index with wrapping logic
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === latestRecipes.length - 1 ? 0 : prevIndex + 1
+    );
+  }; */
+
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get("/api/recipes/latest");
+        const response = await axios.get("/api/latest");
         setLatestRecipes(response.data);
         console.log(response.data);
       } catch (err) {
@@ -31,11 +47,28 @@ export default function Latest() {
   return (
     <div id="latest" className={styles.latestBox}>
       <h2>Latest Recipes</h2>
-      <ul className={styles.RecipeList}>
-        {latestRecipes.map((recipe) => (
-          <RecipeCard key={recipe._id} recipe={recipe} />
-        ))}
-      </ul>
+
+      <div className={styles.carouselContainer}>
+        {/*  <button
+          onClick={handlePrev}
+          className={`${styles.arrowButton} ${styles.left}`}
+        >
+          &#8249;
+        </button> */}
+
+        <div className={styles.recipeWrapper}>
+          {latestRecipes.map((recipe, index) => (
+            <RecipeCard key={recipe._id || index} recipe={recipe} />
+          ))}
+        </div>
+
+        {/*  <button
+          onClick={handleNext}
+          className={`${styles.arrowButton} ${styles.right}`}
+        >
+          &#8250;
+        </button> */}
+      </div>
     </div>
   );
 }

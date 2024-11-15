@@ -11,10 +11,6 @@ require("dotenv").config();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-//const expressLayout = require("express-ejs-layouts");
-//app.use(expressLayout);
-//app.set("layout", "./layouts/main");
-
-app.use(routes);
+app.use("/api", routes);
 
 app.listen(port, () => console.log(`Listening to port ${port}`));

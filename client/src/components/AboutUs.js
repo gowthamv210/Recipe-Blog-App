@@ -14,24 +14,24 @@ export default function AboutUs() {
         <div className="logo-aboutUs">
           <img
             className="app-logo-aboutUs"
-            src="images/app-icon.png"
+            src="/images/app-icon-black.png"
             alt="app-logo"
           />
           <img
             className="app-logo-text"
-            src="images/app-logo-text.png"
+            src="/images/app-logo-text-white.png"
             alt="app-logo-text"
           />
         </div>
         <div className="more-from-us">
-          <h6>MORE FROM US</h6>
+          <h5>MORE FROM US</h5>
           <p>Our Team</p>
           <p>About Us</p>
           <p>Contact</p>
           <p>Site Map</p>
         </div>
         <div className="socials">
-          <h6>FOLLOW ALONG</h6>
+          <h5>FOLLOW ALONG</h5>
           <span>
             <a href="https://www.facebook.com">
               {" "}
@@ -56,7 +56,7 @@ export default function AboutUs() {
         </div>
 
         <div className="sign-up">
-          <h4>Sign up for our newsletter.</h4>
+          <h4 style={{ color: "black" }}>Sign up for our newsletter.</h4>
           <p>
             Enjoy a daily dose of recipes, grocery finds, clever kitchen tips,
             and more.
@@ -64,9 +64,11 @@ export default function AboutUs() {
           <LetterBox />
         </div>
       </div>
+      <p style={{ marginLeft: "14rem" }}>Developed with 🩷 by Gowtham</p>
+
       <footer class="footer">
         <span>
-          ©2024 <strong>Food52 </strong>
+          ©2024 <strong> Crave Corner </strong>
         </span>
         <a href="/terms">Terms</a> | <a href="/privacy">Privacy</a> |
         <a href="/codeofconduct">Code of Conduct</a> |

@@ -1,0 +1,67 @@
+.displayBox {
+  margin: 3rem 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipeContainer {
+  display: flex;
+  gap: 100px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  margin: 3px 0px;
+  font-size: 17px;
+}
+
+.imageColumn {
+  flex: 45%;
+}
+
+.recipeImage {
+  width: 100%;
+  object-fit: cover;
+}
+
+.recipeBox {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 15px;
+}
+
+.instructionBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+h4 {
+  font-size: 1.25rem;
+  color: #444;
+  margin-top: 10px;
+}
+
+ul {
+  padding: 0px 30px;
+}
+
+li {
+  font-size: 17px;
+  color: black;
+}
+
+.error {
+  color: red;
+  font-size: 1.5rem;
+  text-align: center;
+}

@@ -1,0 +1,69 @@
+.communityBox {
+  margin: 0rem 5rem;
+  padding: 4rem 0rem;
+}
+
+.communityContainer img {
+  height: 60%;
+  width: 90%;
+  object-fit: fill;
+}
+
+.communityContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5rem;
+  gap: 10px;
+}
+
+.communityContainer span {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
+  align-items: center;
+}
+
+.card {
+  width: 70%;
+  height: 20%;
+  background: #efb934;
+  font-family: inherit;
+  position: relative;
+  border-radius: 8px;
+}
+
+.quote {
+  color: rgb(223, 248, 134);
+  position: absolute;
+  left: 0;
+  top: 40%;
+  transform: translateY(-50%);
+  font-size: 2px;
+  padding-left: 20px;
+}
+
+.bodyText {
+  font-size: 20px;
+  font-weight: 900;
+  padding: 40px;
+  color: black;
+  position: absolute;
+  top: 20px;
+  left: 50px; /* Move text to the right side, overlapping the quote */
+  line-height: 23px;
+  z-index: 1; /* Ensure the text overlaps the background */
+}
+
+.pic {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(158, 196, 21);
+  border-radius: 50%;
+}
+
+.card .author svg {
+  display: inline;
+  font-size: 12px;
+  color: rgba(128, 155, 29, 0.452);
+}

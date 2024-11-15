@@ -1,14 +1,27 @@
 import "./SearchBox.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function SearchBox() {
+  const navigate = useNavigate();
+  const [input, setSearchInput] = useState("");
+
   return (
     <div className="InputContainer">
       <input
-        placeholder="Search for anything"
+        placeholder="Search for a recipe"
         id="input"
         className="input-search"
-        name="text"
+        name="search"
         type="text"
+        value={input}
+        onChange={(e) => setSearchInput(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            navigate(`/search/${input}`);
+            setSearchInput("");
+          }
+        }}
       />
 
       <label className="labelforsearch" htmlFor="input">

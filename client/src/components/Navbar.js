@@ -1,8 +1,21 @@
 import { Link } from "react-scroll";
 import SearchBox from "./SearchBox";
 import styles from "./Navbar.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
+  function handleClick(name) {
+    navigate("/");
+
+    setTimeout(() => {
+      window.scrollTo({
+        top: document.getElementById(name)?.offsetTop - 100,
+        behavior: "smooth",
+      });
+    }, 100);
+  }
   return (
     <nav className={styles.navBar}>
       <ul className={styles.navList}>
@@ -13,6 +26,7 @@ export default function Navbar() {
             smooth={true}
             offset={-100}
             duration={100}
+            onClick={() => handleClick("recipes")}
           >
             Recipes
           </Link>
@@ -24,6 +38,7 @@ export default function Navbar() {
             smooth={true}
             offset={-100}
             duration={100}
+            onClick={() => handleClick("latest")}
           >
             Latest
           </Link>
@@ -35,47 +50,42 @@ export default function Navbar() {
             smooth={true}
             offset={-100}
             duration={100}
+            onClick={() => handleClick("community")}
           >
             Community
           </Link>
         </li>
-        <li>
-          <Link
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              margin: "0px 10px",
-              cursor: "pointer",
-            }}
-            to="/"
-            spy={true}
-            smooth={true}
-            offset={-100}
-            duration={100}
-          >
-            <img
-              className={styles.appLogo}
-              src="images/app-icon.png"
-              alt="app-logo"
-            />
-            <img
-              className={styles.appLogoText}
-              src="images/app-logo-text.png"
-              alt="app-logo-text"
-            />
-          </Link>
+        <li
+          onClick={() => navigate("/")}
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            margin: "0px 10px",
+            cursor: "pointer",
+          }}
+        >
+          <img
+            className={styles.appLogo}
+            src="/images/app-icon.png"
+            alt="app-logo"
+          />
+          <img
+            className={styles.appLogoText}
+            src="/images/app-logo-text.png"
+            alt="app-logo-text"
+          />
         </li>
 
         <SearchBox />
 
         <li>
           <Link
+            to="aboutus"
             spy={true}
             smooth={true}
             offset={-100}
             duration={100}
-            to="aboutus"
           >
             About Us
           </Link>

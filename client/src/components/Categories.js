@@ -4,8 +4,10 @@ import { useState, useEffect } from "react";
 import Loader from "./Loader";
 import styles from "./Categories.module.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Categories() {
+  const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -22,7 +24,9 @@ export default function Categories() {
     );
   };
 
-  function handleCategoryClick() {}
+  function handleCategory(category) {
+    navigate(`/recipes/${category}`);
+  }
 
   useEffect(() => {
     async function fetchData() {
@@ -60,7 +64,7 @@ export default function Categories() {
 
       <div
         className={styles.carouselItem}
-        onClick={() => handleCategoryClick()}
+        onClick={() => handleCategory(categories[currentIndex].name)}
       >
         <h2 className={styles.categoryName}>{categories[currentIndex].name}</h2>
         <img
