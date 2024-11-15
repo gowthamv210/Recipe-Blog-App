@@ -15,7 +15,7 @@ A feature-rich Recipe Blog Application where users can explore, search, and view
   - REST API with Express.js.
 
 ## 🚀 Live Demo
-The application is deployed on **Render.com**. Check it out [here](https://your-recipe-blog-app-link.render.com).
+The application is deployed on **Render.com**. Check it out [here](https://recipe-blog-app-frontend.onrender.com/).
 
 ## 🛠️ Tech Stack
 - **Frontend**: React.js
